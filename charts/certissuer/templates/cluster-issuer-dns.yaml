@@ -1,0 +1,18 @@
+{{- if .Values.acme.dns.enabled -}}
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: {{ .Values.name }}-dns
+spec:
+  acme:
+    email: {{ .Values.acme.email }} # replace this
+    privateKeySecretRef:
+      name: {{ .Values.name }}-dns-issuer-account-key
+    server: {{ .Values.acme.server }}
+    solvers:
+      - dns01:
+          digitalocean:
+            tokenSecretRef:
+              name: do-api-key
+              key: token
+{{- end -}}

@@ -1,0 +1,7 @@
+auth:
+  id: "your username here"
+  key: "auth key here"
+  clusterId: "cluster id here"
+
+rbd: []
+fs: []

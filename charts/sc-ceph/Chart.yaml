@@ -1,0 +1,6 @@
+apiVersion: v2
+name: sc-ceph
+description: Storage classes chart for Ceph CSI
+type: application
+version: 1.0.1
+appVersion: "1.16.0"

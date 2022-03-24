@@ -1,0 +1,16 @@
+{{- if .Values.acme.http.enabled -}}
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: {{ .Values.name }}-http
+spec:
+  acme:
+    email: {{ .Values.acme.email }} # replace this
+    privateKeySecretRef:
+      name: {{ .Values.name }}-http-issuer-account-key
+    server: {{ .Values.acme.server }}
+    solvers:
+      - http01:
+          ingress:
+            class: {{ .Values.acme.http.ingressClass }}
+{{- end -}}

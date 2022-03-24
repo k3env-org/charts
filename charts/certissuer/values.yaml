@@ -1,0 +1,12 @@
+name: "letsencrypt"
+acme:
+  email: "your@email.here"
+  server: "https://acme-v02.api.letsencrypt.org/directory"
+  dns:
+    enabled: false
+    doToken: ""
+  http:
+    enabled: false
+    ingressClass: ""
+certmanager:
+  installCRDs: true
